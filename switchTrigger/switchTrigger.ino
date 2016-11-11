@@ -24,5 +24,5 @@ void loop(){
 	//print = Print Line, skriver ut, utan radbrytning
 	//digitalRead(x) returnerar värdet för input 2 (1 eller 0)
 	Serial.print(digitalRead(2));
-	delay(500);
+	delay(100);
 }

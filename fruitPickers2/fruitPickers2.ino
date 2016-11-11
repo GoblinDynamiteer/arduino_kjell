@@ -35,9 +35,8 @@ int bigBasketBob = 17;
 int littleBasketBob = 17;
 
 //charvariabel för tp av frukt
-char fruit[] = " apples!";
+char fruit[] = " bananas!";
 //String fruit[] = " apples";
-
 void setup(){
 	//Öppna dataanslutning med 9600 bd
 	Serial.begin(9600);
