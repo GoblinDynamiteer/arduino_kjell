@@ -7,6 +7,8 @@ Styr en servomotor med en potentiometer.
 
 #include <Servo.h> //Finns som standard - Obs versal S
 
+int servopos(int value);
+
 //Skapar ett servo-object: servomotor
 Servo servomotor;
 
@@ -37,8 +39,22 @@ void loop(){
 		och returnera till variabel pos.
 	*/
 	pos = map(analogRead(potPin), 0, 1023, 0, 180);
-	
+	//pos = servopos(analogRead(potPin));
 	//Flytta servomotor till vinkel i pos
 	servomotor.write(pos);
 	delay(15);
+}
+
+/*Egen testfunktion för att omvanla pot-värde till servo-vinkel
+För övningens skull - mer kod!
+Alternativ till map() 
+Fungerar dock inte lika mjukt som map -- eventuellt feltänkt
+*/
+int servopos(int value){
+	//om 0
+	if(!value){
+		return 0;
+		}
+	float div = 1023 / value;
+	return 180 / div;
 }
