@@ -19,6 +19,7 @@ Sätt datum och klockslag på RTC-modul
 RtcDS3231 rtcModule;
 
 void setup(){
+	Serial.begin(9600);
 	//Startar I2C kommunikation
 	Wire.begin();
 	
@@ -27,8 +28,10 @@ void setup(){
 	Om RTC-modulen inte är ansluten vid kompilering så kommer tiden inte att stämma */
 	RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
 	rtcModule.SetDateTime(compiled);
+	Serial.println(__DATE__);
+	Serial.println(__TIME__);
 }
 
 void loop(){
-
+	
 }
